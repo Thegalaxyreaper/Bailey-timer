@@ -29,6 +29,9 @@ resetBtn.addEventListener("click", function() {
     time = 1500;
     updateDisplay();
 });
+stopBtn.addEventListener("click", function() {
+    clearInterval(timer);
+});
 function startTimer() {
     clearInterval(timer);
 
