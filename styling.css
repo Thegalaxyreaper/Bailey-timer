@@ -7,23 +7,29 @@ body {
     height:100vh;
 }
 .button {
-    width:700px;
-    max-height:1000px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-
-}button {
-width: 100px;
-padding:8px;
-background-color:purple;
-color:white;
-
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 400px;
 }
+
+button {
+  flex: 1;
+  min-width: 80px;
+  padding: 12px;
+  font-size: 16px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+
 img{
     width:90vw;
-    max-width: 120px;
+    max-width: 250px;
 }
 h1{
     border-color:purple;
