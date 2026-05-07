@@ -30,6 +30,7 @@ button {
 img{
     width:90vw;
     max-width: 250px;
+    image-rendering:pixelated;
 }
 h1{
     border-color:purple;
