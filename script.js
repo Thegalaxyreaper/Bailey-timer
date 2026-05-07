@@ -10,6 +10,10 @@ function updateTitle(text) {
     foucusTitle.textContent = text;
 }
 startBtn.addEventListener("click", function() {
+    if (time > 0) {
+        startTimer();
+        return;
+    }
     let userInput = parseInt(prompt("enter time in minutes:"));
     if (!isNaN(userInput) && userInput > 0) {
         time = userInput * 60;
