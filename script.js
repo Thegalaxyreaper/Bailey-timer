@@ -1,12 +1,22 @@
 let timerDisplay = document.getElementById("timer");
-let focusBtn = document.getElementById("Focus");
+let startBtn = document.getElementById("start");
 let breakBtn = document.getElementById("Break");
 let resetBtn = document.getElementById("Reset");
-let time = 1500; // 25 minutes
+let stopBtn = document.getElementById("stop");
+let time = 0; // 25 minutes
 let timer;
-focusBtn.addEventListener("click", function() {
-    time = 1500;
-    startTimer();
+let foucusTitle = document.getElementById("focus-title");
+function updateTitle(text) {
+    foucusTitle.textContent = text;
+}
+startBtn.addEventListener("click", function() {
+    let userInput = parseInt(prompt("enter time in minutes:"));
+    if (!isNaN(userInput) && userInput > 0) {
+        time = userInput * 60;
+        startTimer();
+    } else {
+        alert(" please enter a valid number");
+    }
 });
 
 breakBtn.addEventListener("click", function() {
@@ -26,10 +36,16 @@ function startTimer() {
         if (time > 0) {
             time--;
             updateDisplay();
-        } else {
-            clearInterval(timer);
+
+            if (time === 10) {
+            updateTitle("time for a Break!");
+            } else {
+               updateTitle("Time to focus!");
         }
-    }, 1000);
+        } else {
+           clearInterval(timer);
+        }
+} ,1000);
 }
 function updateDisplay() {
     let minutes = Math.floor(time / 60); 
